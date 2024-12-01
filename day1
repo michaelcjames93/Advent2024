@@ -1,0 +1,31 @@
+l=[]
+r=[]
+with open('1-in.txt') as f:
+    for line in f:
+        a, b = line.split()
+        l.append(a)
+        r.append(b)
+#p1
+l.sort()
+r.sort()
+"""
+diff = []
+for n, item in enumerate(l):
+    if int(l[n])>int(r[n]):
+        diff.append(int(l[n]) - int(r[n]))
+    else:
+        diff.append(int(r[n]) - int(l[n]))   
+sum=0
+for item in diff:
+    sum+=item
+print(sum)
+"""
+#p2
+sum=0
+for n, item in enumerate(l):
+    r_item=0
+    for n2, item2 in enumerate(r):
+        if item == item2:
+            r_item+=1 
+    sum+=(r_item*int(item))
+print(sum)
